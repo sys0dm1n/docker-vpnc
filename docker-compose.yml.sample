@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  vpnc:
+    container_name: vpnc
+    image: keeward/vpnc:latest
+    env_file: .env
+    restart: on-failure:5
+    privileged: true
+    read_only: true
+    tmpfs:
+      - /tmp
